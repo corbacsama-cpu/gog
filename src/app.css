@@ -18,8 +18,134 @@ body {
   color: rgb(var(--foreground-rgb));
   font-family: 'Inter', sans-serif;
   letter-spacing: 5%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
 }
 
 .nolineHeight{
  line-height: 100%;
+}
+/* Contact section */
+.contact-section {
+  position: relative;
+  background: url("images/team2.jpeg") no-repeat center center;
+  background-size: cover;
+  padding: 120px;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Overlay sombre */
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* ajuster l’opacité ici */
+  z-index: 0;
+}
+
+.contact-container {
+  position: relative; /* ← AJOUT OBLIGATOIRE */
+  z-index: 1;
+  display: flex;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: auto;
+  gap: 80px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 250px;
+  line-height: 1.4;
+}
+
+.contact-details p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-details .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Padding spécifique pour le textarea du contact */
+#message {
+  width: 100%; /* largeur fixe */
+  height: 400px; /* hauteur fixe */
+  padding: 12px 14px; /* espace interne pour le texte */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+  outline: none;
+  resize: none; /* empêche le redimensionnement */
+  box-sizing: border-box;
+}
+
+/* Placeholder collé au coin supérieur gauche */
+#message::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+}
+
+#message:focus {
+  border-color: #1b7eb3; /* couleur focus */
+  box-shadow: 0 0 8px rgba(30, 215, 96, 0.4);
+}
+.contact-form button {
+  background-color: white;
+  color: black;
+  padding: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }

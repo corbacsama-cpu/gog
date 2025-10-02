@@ -13,39 +13,53 @@ const services: ServiceCategory[] = [
     subtitle:
       "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
     points: [
-      ". GENIE CIVIL & LOGISTIQUE",
-      ". CONSTRUCTION & INFRASTRUCTURE",
-      ". MAINTENANCE INDUSTRIELLE",
+      ".GENIE CIVIL & LOGISTIQUE",
+      ".CONSTRUCTION &INFRASTRUCTURE",
+      ".MAINTENANCE INDUSTRIELLE",
     ],
   },
 ];
 
 function ServiceComponent(props: { service: ServiceCategory }) {
   return (
-    <div class="relative z-10 bg-red-500 flex justify-between items-top h-full  m-8 text-black w-full">
-
+    <div
+      class="
+        relative z-10  
+        flex flex-col md:flex-row 
+        justify-between items-start 
+        h-full w-full m-4 md:m-8 text-black gap-6
+      "
+    >
       {/* Bloc gauche */}
-      <div class="flex  bg-amber-300 flex-col justify-between">
+      <div class="flex flex-col justify-between w-full md:w-1/3">
         {/* Carré décoratif */}
-        <div class="flex justify-center items-center my-24 w-8 h-8 bg-[#E0B818]"></div>
-
+        <div class="flex justify-center items-center my-12 md:my-16 w-8 h-8 bg-[#E0B818]"></div>
+  
         {/* Liste des points */}
-        <div class="flex flex-col justify-end  text-left space-y-2 py-8">
+        <div class="flex flex-col justify-end text-left space-y-2 py-6">
           <For each={props.service.points}>
             {(point) => (
-              <p class="font-inter text-base text-justify fade-up">{point}</p>
+              <p class="font-inter text-base  text-justify fade-up">{point}</p>
             )}
           </For>
         </div>
       </div>
-
+  
       {/* Bloc droit */}
-      <div class="flex bg-green-500 flex-col text-justify sm:max-w-[500px] lg:max-w-[1000px] md:max-w-[800px] py-8">
-        <h1 class="font-inter   nolineHeight text-2xl md:text-[90px] text-justify lg:text-[140px] font-bold fade-up leading-tight">
+      <div
+        class="
+          flex flex-col 
+          w-full md:w-2/3 
+          text-justify py-6 px-4
+        "
+      >
+        <h1 class="font-inter text-2xl md:text-[64px] lg:text-[120px] font-bold fade-up leading-tight">
           {props.service.title} <span>&</span>
         </h1>
-        <h1 class="font-inter text-2xl text-[#E0B818] md:text-[90px] text-justify lg:text-[140px] font-bold fade-up leading-tight">LOGISTIQUE</h1>
-        <p class="font-inter text-base md:text-2xl text-justify fade-up mt-4">
+        <h1 class="font-inter text-xl text-[#E0B818] md:text-[64px] lg:text-[120px] font-bold fade-up leading-tight">
+          LOGISTIQUE
+        </h1>
+        <p class="font-inter text-base md:text-2xl text-start fade-up mt-4">
           {props.service.subtitle}
         </p>
       </div>

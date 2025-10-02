@@ -7,10 +7,10 @@ type ServiceItem = {
 };
 
 type ServiceProps = {
-  bgColor?: string;   
-  bgTrait?:string;  // couleur de fond globale si non définie pour les items
-  textColor?: string;   // couleur du texte globale
-  padding?:String;
+  bgColor?: string;
+  bgTrait?: string; // couleur de fond globale si non définie pour les items
+  textColor?: string; // couleur du texte globale
+  padding?: String;
 };
 
 export default function Service(props: ServiceProps) {
@@ -33,11 +33,21 @@ export default function Service(props: ServiceProps) {
   ];
 
   return (
-    <div class={`flex  justify-between gap-8 font-inter ${props.padding || "py-0"}`}>
+    <div
+      class={`
+      grid 
+      grid-cols-1          /* 1 colonne par défaut */
+      sm:grid-cols-2       /* 2 colonnes ≥640px */
+      lg:grid-cols-3       /* 3 colonnes ≥1024px */
+      gap-8 
+      font-inter 
+      ${props.padding || "py-0"}
+    `}
+    >
       <For each={items}>
         {(item) => (
           <div
-            class="flex flex-col w-[480px] h-[480px] p-6"
+            class="flex flex-col p-6 w-full" /* largeur auto dans sa cellule */
             style={{ "background-color": props.bgColor || "#fff" }}
           >
             {/* Trait décoratif */}
@@ -74,6 +84,7 @@ export default function Service(props: ServiceProps) {
           </div>
         )}
       </For>
+      
     </div>
   );
 }

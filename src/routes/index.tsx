@@ -11,8 +11,8 @@ import Contact from "~/components/contact";
 
 export default function Home() {
   return (
-    <main class="max-w-[1600] bg-black mx-auto">
-      <Hero />
+    <main class="w-full bg-black mx-auto scroll-snap-y-mandatory">
+      <Hero/>
 
       {/* Carrousel */}
       <HeroCarousel />
@@ -48,9 +48,9 @@ export default function Home() {
             title="INDUSTRIEL"
             subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna."
             points={[
-              ". GENIE CIVIL & LOGISTIQUE",
-              ". CONSTRUCTION & INFRASTRUCTURE",
-              ". MAINTENANCE INDUSTRIELLE",
+              ".GENIE CIVIL & LOGISTIQUE",
+              ".CONSTRUCTION & INFRASTRUCTURE",
+              ".MAINTENANCE INDUSTRIELLE",
             ]}
           />
         </section>
@@ -62,7 +62,7 @@ export default function Home() {
         <Metallurgie/>
          {/* secteur red */}
          <section class="bg-black flex flex-col">
-          <div class="bg-[#D81917] w-full pt-[300px]">
+          <div class="bg-[#D81917] w-full">
           <Secteur
             bgColor=""
             textColor="#fff"
